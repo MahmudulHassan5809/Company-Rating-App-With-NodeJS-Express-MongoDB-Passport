@@ -1,0 +1,32 @@
+  <nav class="navbar navbar-expand-md navbar-dark  bg-primary">
+      <div class="container">
+        <a class="navbar-brand" href="/">Rating App</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <form class="form-inline" action="/company/search" method="POST">
+          <input class="form-control mr-sm-2" name="search" type="search" placeholder="Search By Company Name" aria-label="Search">
+          <button class="btn btn-outline-warning bg-warning text-dark my-2 my-sm-0" type="submit">Search</button>
+        </form>
+        <ul class="navbar-nav ml-auto">
+
+
+        <% if (user) { -%>
+            <li class="nav-item">
+              <a href="/users/logout" class="nav-link font-weight-bold text-white form-control-lg">Logout</a>
+            </li>
+        <% } else { -%>
+            <li class="nav-item">
+              <a href="/users/signup" class="nav-link font-weight-bold text-white form-control-lg">Register</a>
+            </li>
+            <li class="nav-item">
+              <a href="/users/login" class="nav-link font-weight-bold text-white form-control-lg">Login</a>
+            </li>
+        <% } -%>
+        </ul>
+
+      </div>
+      </div>
+    </nav>

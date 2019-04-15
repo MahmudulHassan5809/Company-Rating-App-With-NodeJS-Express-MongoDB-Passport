@@ -1,0 +1,31 @@
+<div id="sidebar-wrapper" class="position-absolute">
+        <div class="sidebar-brand">
+			<a href="/users/profile">RateMe</a>
+        </div>
+
+        <ul class="sidebar-nav">
+			<img src="http://placehold.it/100x100" class="profile_img rounded-circle" alt="">
+            <div class="profile_info">
+				<span>Welcome,</span>
+				<h2>
+                    <% if (user) { -%>
+                          <%= user.fullname %>
+                    <% } else { -%>
+                          Guest
+                    <% } -%>
+                </h2>
+            </div>
+
+            <% if (user) { -%>
+                <li><a href="/users/profile"><i class="fa fa-home"></i>Home</a></li>
+                <li><a href="/company/companies"><i class="fa fa-building"></i>Companies</a></li>
+                <li><a href="/company/search"><i class="fa fa-search"></i>Search Companies</a></li>
+                <li><a href="/company/leaderboard"><i class="fa fa-bars"></i>Leader Board</a></li>
+
+            <% } else { -%>
+                <li><a href="/company/companies"><i class="fa fa-building"></i>Companies</a></li>
+                <li><a href="/company/search"><i class="fa fa-search"></i>Search Companies</a></li>
+                <li><a href="/company/leaderboard"><i class="fa fa-bars"></i>Leader Board</a></li>
+            <% } -%>
+        </ul>
+    </div>

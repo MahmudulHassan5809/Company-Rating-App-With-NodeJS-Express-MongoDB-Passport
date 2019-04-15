@@ -1,0 +1,12 @@
+<% if (validation_errors.length > 0) { -%>
+	<% for (var i = 0; i < validation_errors.length; i++) { -%>
+		<div class="alert alert-danger">
+			<a href="#" class="close" data-dismiss="alert" aria-label="close">
+				&times;
+			</a>
+			<%= validation_errors[i] %>
+		</div>
+
+
+	<% } -%>
+<% } -%>

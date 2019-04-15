@@ -1,0 +1,42 @@
+<% layout('layout') %>
+<div class="container">
+    <br><br>
+    <div class="text-center reg_msg">
+        <h1><a href="/">RateMe</a></h1>
+    </div>
+   <br><br>
+
+
+
+
+   <div class="text-center reg_msg">
+        <h2 class="fancy"><span>Forgot Password</span></h2>
+        <p>Please Enter Your Email And A Reset Link Will Be Sent</p>
+   </div><br>
+
+    <div class="row">
+
+       <div class="col-md-8 mx-auto">
+        <% include ../partials/message %>
+        <% include ../partials/validationMessages %>
+      <form method="POST" class="" id="loginForm" action="/users/forgot">
+
+       <div class="form-group">
+       		<input type="email" name="email" id="email" value="<% if (typeof data !== 'undefined') { -%> <%= data.email %> <% } -%>" placeholder="Email" class="form-control">
+       	</div>
+
+       	<div class="form-group">
+          <input type="submit" value="Send Link" class="btn btn-info btn-block">
+        </div>
+
+      </form>
+
+
+
+      </div>
+
+
+
+
+    </div>
+</div>

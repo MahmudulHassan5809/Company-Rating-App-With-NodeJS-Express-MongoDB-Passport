@@ -1,0 +1,52 @@
+<%= layout('layout2') %>
+
+<div id="wrapper">
+	<% include ../partials/sidebar %>
+	<div id="page-content-wrapper">
+		<div class="container-fluid main_body">
+			<div class="ul_links">
+	            <ul>
+	                <li><a href="/">Home</a></li> |
+	                 <li><a href="/company/companies">All Companies</a></li>
+	                <li><a href="#">Company Profile</a></li>
+	            </ul>
+	        </div>
+
+	        <div class="bodyDiv">
+				<h4 style="">Company Employees</h4>
+				<div class="row mainDiv">
+					<table class="table table-striped table-inverse table-hover">
+						<thead>
+							<tr>
+								<th>Full Name</th>
+								<th>Position</th>
+								<th>Send Message</th>
+							</tr>
+						</thead>
+						<tbody>
+							<% if (company.employees.length > 0) { -%>
+								<% for (var i = 0; i < company.employees.length; i++) { -%>
+								<tr>
+									<td>
+										<%= company.employees[i].employee.fullname %>
+									</td>
+									<td>
+										<%= company.employees[i].employee.role %>
+									</td>
+									<td>
+										<a href="/message/<%= company.employees[i].employee._id %>"><i class="fa fa-sms" style="font-size: 32px;"></i></a>
+									</td>
+								</tr>
+							<% } -%>
+							<% } else { -%>
+								<tr colspan="2">
+									<td>No Data Available</td>
+								</tr>
+							<% } -%>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
